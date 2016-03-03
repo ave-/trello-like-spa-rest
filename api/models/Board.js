@@ -26,27 +26,5 @@ module.exports = {
       return obj;
     }
   },
-  ownBoard: function (id, callback)
-  {
-    BoardService.findOne(values.board).exec(
-      function (err, board)
-      {
-
-        if (!board)
-        {
-          return callback("board not found");
-        }
-        if (err)
-        {
-          return callback(err); //some other error
-        }
-        if (board.user.id !== values.user) //board with this id belongs to another user
-        {
-          return callback("forbidden");
-        }
-        return callback(); //passed
-      }
-    );
-  }
 };
 
