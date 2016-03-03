@@ -1,0 +1,8 @@
+<div class="board">
+  <button class="btn btn-sm btn-success" data-ng-click="vm.addBoard()"><i class="fa fa-plus"></i>Add board</button>
+  <div class="board-canvas">
+    <div class="list-wrapper" ng-repeat="board in vm.boards">
+      <board tl-model="board" tl-index="$index"></board>
+    </div>
+  </div>
+</div>

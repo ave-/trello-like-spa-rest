@@ -1,0 +1,43 @@
+<uib-alert class="alert" ng-repeat="error in registerctl.errors" type="danger">{{error.err}}</uib-alert>
+<div class="row">
+  <div class="site-login center-block col-lg-4 col-md-4 col-sm-6">
+    <form name="registerForm" class="form-horizontal" novalidate>
+      <div class="form-group input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input id="email" type="email" class="form-control" placeholder="Email" name="login"
+               ng-model="registerctl.user.login" required>
+        <div ng-show="registerForm.email.$dirty" ng-messages="registerForm.email.$error">
+          <div ng-message="required">
+            Email is required.
+          </div>
+          <div ng-message="email">
+            Email not valid.
+          </div>
+        </div>
+      </div>
+      <div class="form-group input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input id="password" type="password" class="form-control" placeholder="Password" name="password"
+               ng-model="registerctl.user.password" required>
+        <div ng-show="registerForm.password.$dirty" ng-messages="registerForm.password.$error">
+          <div ng-message="required">
+            Password is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input id="password_confirm" type="password" class="form-control" placeholder="Confirm password"
+               name="confirmpassword" ng-model="registerctl.user.confirmPassword" required>
+        <div ng-show="registerForm.confirmpassword.$dirty" ng-messages="registerForm.confirmpassword.$error">
+          <div ng-message="required">
+            Password confirmation is required.
+          </div>
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-lg btn-primary btn-block" ng-click="registerctl.register()" value="Register"
+             ng-disabled="registerForm.$invalid"/>
+    </form>
+  </div>
+</div>

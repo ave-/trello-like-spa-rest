@@ -1,0 +1,15 @@
+<span data-ng-bind-html="model | formatText" data-ng-hide="evm.editing"></span><i class="fa fa-pencil" data-ng-hide="evm.editing"
+                                                                style="visibility: hidden;"
+                                                                data-ng-click="evm.edit()"></i>
+<div ng-switch on="type">
+  <div ng-switch-when="input">
+    <input type="text" data-ng-model="$parent.model" class="form-control" data-ng-show="evm.editing" title="Input text here...">
+    <span class="text-success fa fa-check-circle-o fa-lg" data-ng-show="evm.editing" data-ng-click="evm.save()"> </span>
+    <span class="text-danger fa fa-times-circle-o fa-lg" data-ng-show="evm.editing" data-ng-click="evm.undo()"> </span>
+  </div>
+  <div ng-switch-when="textarea">
+    <textarea data-ng-model="$parent.model" class="form-control" data-ng-show="evm.editing" title="Input text here..."></textarea>
+    <span class="text-success fa fa-check-circle-o fa-lg" data-ng-show="evm.editing" data-ng-click="evm.save()"> </span>
+    <span class="text-danger fa fa-times-circle-o fa-lg" data-ng-show="evm.editing" data-ng-click="evm.undo()"> </span>
+  </div>
+</div>

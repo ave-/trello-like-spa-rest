@@ -1,0 +1,15 @@
+<div class="list">
+  <i class="fa fa-times fa-lg delete-board" ng-click="bvm.removeBoard()"> </i>
+  <div class="listHeader">
+    <editable data-tl-model="model.name" data-tl-type="input"></editable>
+  </div>
+  <button class="btn btn-success btn-sm" data-ng-click="bvm.addCard()"><i class="fa fa-plus"></i>Add card</button>
+  <div class="listCards" ui-sortable="bvm.sortableOptions" data-ng-model="model.cards">
+    <div class="listCard" ng-repeat="card in model.cards">
+      <i class="fa fa-times fa-lg delete-card" ng-click="bvm.removeCard($index)"> </i>
+      <card data-tl-model="card"></card>
+    </div>
+  </div>
+</div>
+
+
